@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Função para verificar se o número pertence à sequência de Fibonacci
+int pertenceFibonacci(int num) {
+    int a = 0, b = 1, c;
+    
+    if (num == a || num == b) {
+        return 1;
+    }
+
+    c = a + b;
+    while (c <= num) {
+        if (c == num) {
+            return 1; // O número pertence à sequência
+        }
+        a = b;
+        b = c;
+        c = a + b;
+    }
+    
+    return 0; // O número não pertence à sequência
+}
+
+int main() {
+    int num;
+    
+    // Solicita ao usuário para inserir um número
+    printf("Informe um numero: ");
+    scanf("%d", &num);
+    
+    // Verifica se o número pertence à sequência de Fibonacci
+    if (pertenceFibonacci(num)) {
+        printf("O numero %d pertence a sequencia de Fibonacci.\n", num);
+    } else {
+        printf("O numero %d não pertence a sequencia de Fibonacci.\n", num);
+    }
+    
+    return 0;
+}
