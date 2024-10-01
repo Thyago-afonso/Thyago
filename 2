@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];  // Definindo um tamanho máximo para a string
+    int i, count = 0;
+
+    // Solicitando ao usuário que informe a string
+    printf("Informe uma string: ");
+    fgets(str, sizeof(str), stdin);  // Lê a string informada pelo usuário
+    
+    // Verifica cada caractere da string
+    for (i = 0; i < strlen(str); i++) {
+        if (str[i] == 'a' || str[i] == 'A') {
+            count++;  // Incrementa o contador se 'a' ou 'A' for encontrado
+        }
+    }
+
+    // Exibe o resultado
+    if (count > 0) {
+        printf("A letra 'a' aparece %d vez(es) na string.\n", count);
+    } else {
+        printf("A letra 'a' não foi encontrada na string.\n");
+    }
+
+    return 0;
+}
